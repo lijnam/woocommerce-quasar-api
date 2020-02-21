@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 interface RestInterface
 {
-    public function get(Request $request ,string $endpoint);
+    public function get(Request $request);
 
     public function post(Request $request);
 

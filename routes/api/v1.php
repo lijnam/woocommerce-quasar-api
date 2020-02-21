@@ -11,7 +11,7 @@
 |
 */
 
-$router->get('/', function () use ($router) {
+$router->get('/lumen', function () use ($router) {
     return $router->app->version();
 });
-$router->get('{endpoint}', 'WooCommerceController@get');
+$router->get('{endpoint}', 'ProductsController@get');
