@@ -22,7 +22,6 @@ $app = new Laravel\Lumen\Application(
 );
 
 // $app->withFacades();
-
 // $app->withEloquent();
 
 /*
@@ -91,10 +90,20 @@ $app->singleton(
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| Api Router
+|--------------------------------------------------------------------------
+*/
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
+    'prefix'=>'v1'
 ], function ($router) {
-    require __DIR__.'/../routes/web.php';
+    require __DIR__.'/../routes/api/v1.php';
 });
+
+/* TODO comment in production*/
+$app->configure('app');
 
 return $app;
